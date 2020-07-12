@@ -1,7 +1,5 @@
 #include <Windows.h>
 
-uintptr_t nWE = (uintptr_t)GetModuleHandle(NULL);
-
 LPCSTR lpPrefix = "";
 
 bool patch(uintptr_t nAddress, DWORD dwBYTES, size_t nSize)
@@ -84,6 +82,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, UINT ul_reason_for_call, LPVOID lpReserve
 	if (ul_reason_for_call == DLL_PROCESS_ATTACH)
 		if (!GetModuleHandle("Game.dll"))
 		{
+			uintptr_t nWE = (uintptr_t)GetModuleHandle(NULL);
+
 			call(nWE + 0x10529f, f00000001);
 			fill(nWE + 0x1052a4, 0x90, 9);
 
