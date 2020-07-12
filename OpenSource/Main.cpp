@@ -93,4 +93,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, UINT ul_reason_for_call, LPVOID lpReserve
 
 			return TRUE;
 		}
+
+	return FALSE;
 }
