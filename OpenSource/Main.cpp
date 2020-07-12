@@ -90,7 +90,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, UINT ul_reason_for_call, LPVOID lpReserve
 			patch(nWE + 0x104520, 0x68, 1);
 			patch(nWE + 0x104521, (uintptr_t)lpPrefix, 4);
 			patch(nWE + 0x104525, 0x9090, 2);
-		}
 
-	return TRUE;
+			return TRUE;
+		}
 }
